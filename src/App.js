@@ -1,12 +1,20 @@
 import logo from './logo.svg';
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
-import Greet from "./components/greet";
+import Counter from './components/Counter';
+
 
 const App=()=>{
+  
+  const [count,setCount] = useState(0);
+  
+  const addCount = () =>{
+    setCount(count+1);
+  }
   return(
     <div className="App"> 
-    <Greet/>
+    <button onClick={addCount} >Add</button>
+    <Counter count = {count}/>
     </div>
   )
 
