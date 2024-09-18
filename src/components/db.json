@@ -1,0 +1,108 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "title": "Wireless Bluetooth Headphones",
+        "price": 29.99,
+        "category": "Electronics",
+        "description": "Comfortable over-ear headphones with crystal clear sound and deep bass."
+      },
+      {
+        "id": 2,
+        "title": "Stainless Steel Water Bottle",
+        "price": 15.99,
+        "category": "Home & Kitchen",
+        "description": "Insulated water bottle that keeps your drinks cold for 24 hours."
+      },
+      {
+        "id": 3,
+        "title": "Yoga Mat",
+        "price": 19.99,
+        "category": "Sports & Outdoors",
+        "description": "Non-slip yoga mat with extra cushioning for comfort during workouts."
+      },
+      {
+        "id": 4,
+        "title": "LED Desk Lamp",
+        "price": 22.99,
+        "category": "Office Supplies",
+        "description": "Adjustable LED desk lamp with touch control and multiple brightness levels."
+      },
+      {
+        "id": 5,
+        "title": "Electric Toothbrush",
+        "price": 39.99,
+        "category": "Personal Care",
+        "description": "Rechargeable electric toothbrush with multiple brushing modes."
+      },
+      {
+        "id": 6,
+        "title": "Smartphone Tripod",
+        "price": 14.99,
+        "category": "Electronics",
+        "description": "Lightweight, portable tripod for smartphones with adjustable height."
+      },
+      {
+        "id": 7,
+        "title": "Running Shoes",
+        "price": 59.99,
+        "category": "Footwear",
+        "description": "Comfortable running shoes designed for long-distance running."
+      },
+      {
+        "id": 8,
+        "title": "Wireless Mouse",
+        "price": 12.99,
+        "category": "Computers",
+        "description": "Ergonomic wireless mouse with adjustable DPI settings."
+      },
+      {
+        "id": 9,
+        "title": "Bluetooth Speaker",
+        "price": 49.99,
+        "category": "Electronics",
+        "description": "Portable Bluetooth speaker with excellent sound quality and long battery life."
+      },
+      {
+        "id": 10,
+        "title": "Air Purifier",
+        "price": 89.99,
+        "category": "Home Appliances",
+        "description": "Air purifier with HEPA filter to remove allergens and improve air quality."
+      }
+    ],
+    "reviews": [
+      {
+        "id": 1,
+        "rating": 4.5,
+        "comment": "Great sound quality, but a bit tight around the ears.",
+        "productId": 1
+      },
+      {
+        "id": 2,
+        "rating": 5,
+        "comment": "Keeps water cold all day! Perfect for hiking.",
+        "productId": 1
+      },
+      {
+        "id": 3,
+        "rating": 4,
+        "comment": "Good quality mat, but could be a little thicker.",
+        "productId": 1
+      },
+      {
+        "id": 4,
+        "rating": 5,
+        "comment": "Very bright and adjustable. Perfect for studying.",
+        "productId": 2
+      },
+      {
+        "id": 5,
+        "rating": 3.5,
+        "comment": "Battery life is shorter than expected, but cleans well.",
+        "productId": 3
+      }
+    
+    ]
+  }
+  

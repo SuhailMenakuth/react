@@ -1,7 +1,12 @@
 
-import React,{useState,useRef,useEffect} from 'react';
-import './App.css';
+import React, { useState, useRef, useEffect } from 'react';
+// import './App.css';
 import Button from './components/Button';
+import Sample from './components/Sample';
+import Example from './components/Example'
+import UseReducerexample from './components/UseReducerExample';
+
+
 // import Counter from  './components/Counter';
 // import PropsExample from './components/PropsExample';
 // import Greeting from './components/Greeting';
@@ -10,9 +15,9 @@ import Button from './components/Button';
 
 
 // const App=()=>{
-  
+
 //   const [count,setCount] = useState(0);
-  
+
 //   const addCount = () =>{
 //     setCount(count+1);
 //   }
@@ -32,7 +37,7 @@ import Button from './components/Button';
 
 //     <div className='App'> 
 //     <h1 onClick={() =>setState(!state)}>Show / Hide</h1>
-    
+
 //    { state ? <Counter/> : null}
 //      </div>
 
@@ -46,9 +51,9 @@ import Button from './components/Button';
 
 //   // const [count,setCount] = useState(0);
 //   return (
-    
+
 //     // <button onClick={()=>setCount(count+1)} >click me to increment :{count}</button>
- 
+
 //     <HandleClick/>
 //   )
 
@@ -65,8 +70,8 @@ import Button from './components/Button';
 
 
 
-  
- 
+
+
 
 
 
@@ -166,7 +171,7 @@ import Button from './components/Button';
 
 //   ]
 
-  
+
 //   return(
 //     <div>
 
@@ -202,7 +207,7 @@ import Button from './components/Button';
 //     'Percy Lavon Julian: chemist',
 //     'Subrahmanyan Chandrasekhar: astrophysicist'
 //   ];
- 
+
 //   const filtered =people.filter(
 //     (item, index)=>  index >2)
 //   .map((item , index)=><li>{item}</li> );
@@ -210,7 +215,7 @@ import Button from './components/Button';
 //   return <ul>
 
 //     {filtered}
-     
+
 //   </ul> 
 // }
 
@@ -240,7 +245,7 @@ import Button from './components/Button';
 //   return(
 //     <div>
 //       <input ref={inputRef} type="text" placeholder='Typing something.....' />
-      
+
 //       <button 
 //       onClick={handleClick}
 //       >
@@ -284,7 +289,7 @@ import Button from './components/Button';
 //useREf example
 
 // const App =()=>{
-  
+
 //   const countRef = useRef(0); // Initialize the reference for the count
 //   const [renderCount, setRenderCount] = useState(0);
 
@@ -356,67 +361,309 @@ import Button from './components/Button';
 
 
 //todo 
-function App() {
+// function App() {
 
-  const [list,listingDown] = useState([]);
-  const [todo,setToDo] = useState('');
-  return (
-    <div className="app">
-      <div className="mainHeading">
-        <h1>ToDo List</h1> 
-      </div>
-      <div className="subHeading">
-        <br />
-        <h2>Whoop, it's Wednesday 🌝 ☕ </h2>
-      </div>
-      <div className="input">
-        <input value={todo}  onChange={(e)=>setToDo(e.target.value)}  type="text" placeholder="🖊️ Add item..." />
-        <i onClick={() =>listingDown([...list,{id : Date.now(), text :todo, status :false}])} className="fas fa-plus"></i>
-        
-      </div>  
-      <div className="todos">
-        {list.map((value)=>{
-          return(
-          <div className="todo">
-          <div className="left">
-            <input
-            onChange={(e)=>{
+//   const [list, listingDown] = useState([]);
+//   const [todo, setToDo] = useState('');
+//   return (
+//     <div className="app">
+//       <div className="mainHeading">
+//         <h1>ToDo List</h1>
+//       </div>
+//       <div className="subHeading">
+//         <br />
+//         <h2>Whoop, it's Wednesday 🌝 ☕ </h2>
+//       </div>
+//       <div className="input">
+//         <input value={todo} onChange={(e) => setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
+//         <i onClick={() => listingDown([...list, { id: Date.now(), text: todo, status: false }])} className="fas fa-plus"></i>
 
-              listingDown(list.filter(obj =>{
-                if(obj.id === value.id)
-                   {obj.status = e.target.checked;}
-                return obj;
-                
-              }))
+//       </div>
+//       <div className="todos">
+//         {list.map((value) => {
+//           return (
+//             <div className="todo">
+//               <div className="left">
+//                 <input
+//                   onChange={(e) => {
 
+//                     listingDown(list.filter(obj => {
+//                       if (obj.id === value.id) { obj.status = e.target.checked; }
+//                       return obj;
 
-             
-               
+//                     }))
 
-            }} 
-             value={value.status} type="checkbox" name="" id="" />
-            <p>{value.text}</p>
-          </div>
-          <div className="right">
-            <i className="fas fa-times"></i>
-          </div>
-        </div>
-          )
-        })
-        }
+//                   }}
+//                   value={value.status} type="checkbox" name="" id="" />
+//                 <p>{value.text}</p>
+//               </div>
+//               <div className="right">
+//                 <i className="fas fa-times"></i>
+//               </div>
+//             </div>
+//           )
+//         })
+//         }
 
-        {list.map((obj)=>{
-          if(obj.status){
-            return(<h1>{obj.text}</h1>)
-          }
-          return null;
-        })}
-      </div>
-    </div>
-  );
-}
+//         {list.map((obj) => {
+//           if (obj.status) {
+//             return (<h1>{obj.text}</h1>)
+//           }
+//           return null;
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
 
 
+
+
+
+
+
+// listing like todos
+
+// function App(){
+
+//   const [char,addingTochar]=useState('')
+//   const [list,setLIst]=useState([])
+
+//   console.log(char)
+
+
+//   return(
+// <div>
+//     <div>
+//       <input value={char} onChange={(e)=>addingTochar(e.target.value)} type="text" />
+
+
+
+//       <i style={{cursor:"pointer"}} onClick={()=>setLIst([...list,char])}>+</i>
+
+//     </div >
+//     {list.map((value) =>{
+//       return(
+//         <>
+//         <ul>
+//         <li> {value}
+
+//         </li>
+//       </ul>
+//       </>
+//       )
+//     })}
+      
+      
+
+
+//     <div> 
+
+//     </div>
+//  </div>
+//   )
+// }
+
+
+
+
+//changing the div color according to the counter value
+
+// function App() {
+
+//   const [count , setCounter] = useState(0);
+
+//   function increment(){
+//     setCounter( count+1)
+    
+//   }
+//   return (
+
+//     <div>
+
+//     <h1>counter : {count}</h1>
+
+//     <button onClick={increment}>increment</button>
+
+
+//     <div
+    
+//     style={{
+//       background: count % 2 === 0 ? "green" : "yellow" ,
+//       width : "100%",
+//       height : "100px",
+//       textAlign : "center",
+//       marginTop:"20px",
+//       padding :"auto"
+    
+    
+//     }}
+    
+//     >
+//       the counter is {count % 2 === 0 ? "even ": "odd"}.
+
+//     </div>
+
+
+//     </div>
+//   )
+// }
+
+
+// 5 star rating 
+
+// function App() {
+//   const [rating, setRating] = useState(0); // Store the rating value
+
+//   // Function to set the rating when a star is clicked
+//   const handleClick = (rating) => {
+//     setRating(rating);
+//   };
+
+//   return (
+//     <div style={{ fontSize: "2rem" }}>
+//       {/* Loop to generate 5 stars */}
+//       {[...Array(5)].map((star, index) => {
+//         const starValue = index + 1; // Values 1 to 5 for each star
+
+//         return (
+//           <span
+//             key={index}
+//             style={{
+//               cursor: "pointer",
+//               color: starValue <= rating ? "gold" : "gray",
+//             }}
+//             onClick={() => handleClick(starValue)}
+//           >
+//             ★
+//           </span>
+//         );
+//       })}
+//       <p>Your rating: {rating} star(s)</p>
+//     </div>
+//   );
+// }
+
+
+
+
+
+// function App(){
+//   const [rating ,  setRating] = useState(0);
+//   function handleClick(rating){
+//     setRating(rating);
+//   }
+//   return(
+//     <div style={{fontSize:"5em"}}>
+//       {[...Array(5)].map((star,index) =>{
+//         const starValue = index + 1;
+
+//        return(
+
+//         <span style={{cursor:"pointer", color:starValue<=rating?"gold":"gray"}}
+//         onClick={()=>handleClick(starValue)}>
+          
+//           *
+//         </span>
+
+//        )}
+
+//       )}
+//     </div>
+//   )
+// }
+
+
+
+// function App(){
+//   const initialColors = ['yellow', 'blue', 'green', 'red'];
+//   const [selectedColor, setSelectedColor] = useState('red');
+
+//   // Handler for when a div is clicked
+//   const handleClick = (color) => {
+//     setSelectedColor(color);
+//   };
+  
+
+//   return (
+//     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+//       {initialColors.map((color, index) => (
+
+
+//         <div
+//           key={index}
+
+
+//           style={{
+//             width: '100px',
+//             height: '100px',
+//             backgroundColor: index === initialColors.length - 1 ? selectedColor : color,
+//             margin: '10px',
+//             cursor: 'pointer'
+//           }}
+//           onClick={() => handleClick(color)}
+          
+//         >
+//         </div>
+       
+//       ))}
+       
+//     </div>
+//   );
+// }
+
+
+
+
+// const images = [
+//   'https://via.placeholder.com/600x300?text=Image+1',
+//   'https://via.placeholder.com/600x300?text=Image+2',
+//   'https://via.placeholder.com/600x300?text=Image+3',
+//   'https://via.placeholder.com/600x300?text=Image+4'
+// ];
+// function App(){
+//   const [currentIndex, setCurrentIndex] = useState(0);
+
+//   const goToPrevious = () => {
+//     setCurrentIndex((prevIndex) =>
+//       prevIndex === 0 ? images.length - 1 : prevIndex - 1
+//     );
+//   };
+
+//   const goToNext = () => {
+//     setCurrentIndex((prevIndex) =>
+//       prevIndex === images.length - 1 ? 0 : prevIndex + 1
+//     );
+//   };
+
+//   return (
+//     <div className="slider">
+//       <button onClick={goToPrevious} className="prev">Previous</button>
+//       <img src={images[currentIndex]} alt="Slide" className="image" />
+//       <button onClick={goToNext} className="next">Next</button>
+//     </div>
+//   );
+// }
+
+
+
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   const incrementCounter = () => {
+//     setCount(count + 1);
+//   };
+
+//   return (
+//     <div>
+//       <button onClick={incrementCounter}>Button 1</button>
+//       <p>Button 1 count: {count}</p>
+//       <button onClick={incrementCounter}>Button 2</button>
+//       <p>Button 2 count: {count}</p>
+//     </div>
+//   );
+// }
 
 
 
@@ -449,38 +696,38 @@ function App() {
 
 
 
-  
-
-
-
-
-  // function TestuseEffect(){
-
-  //   const [windowWidth,setWindowWidth] = useState(window.innerWidth)
-
-  //  const handleResize = () =>{
-  //   setWindowWidth(window.innerWidth)
-  //  }
-  // useEffect(()=>{
-
-  //   window.addEventListener('resize',handleResize)
-
-  // },[])
-
-    
-  //   return(
-
-  //     <div>{windowWidth}</div>
-
-  //   )
-  // }
-
 
 
 
 
 
 // function TestuseEffect(){
+
+//   const [windowWidth,setWindowWidth] = useState(window.innerWidth)
+
+//  const handleResize = () =>{
+//   setWindowWidth(window.innerWidth)
+//  }
+// useEffect(()=>{
+
+//   window.addEventListener('resize',handleResize)
+
+// },[])
+
+
+//   return(
+
+//     <div>{windowWidth}</div>
+
+//   )
+// }
+
+
+
+
+
+
+// function App(){
 //   const [resourceType,setResourceType] = useState('posts')
 //   const [items, setItems] = useState([]);
 
@@ -500,7 +747,7 @@ function App() {
 
 //   return(
 //     <>
-    
+
 //      <div>
 //       <button onClick={()=>setResourceType('posts')}>posts</button>
 //       <button onClick={()=>setResourceType('users')}>users</button>
@@ -512,12 +759,58 @@ function App() {
 //       return <pre>{JSON.stringify(items)}</pre>
 //      })}
 
-    
+
 //     </>
 //   )
 // }
 
 
+
+
+
+
+
+// function ValueTracker() {
+//   const [value, setValue] = useState(0);
+//   const prevValueRef = useRef(0); // Initialize useRef to hold previous value
+
+//   useEffect(() => {
+//     prevValueRef.current = value; // Update the ref with the current value after every render
+//   }, [value]); // Run this effect whenever 'value' changes
+
+//   return (
+//     <div>
+//       <h1>Current Value: {value}</h1>
+//       <h2>Previous Value: {prevValueRef.current}</h2>
+//       <button onClick={() => setValue(value + 1)}>Increment</button>
+//       <button onClick={() => setValue(value - 1)}>Decrement</button>
+//     </div>
+//   );
+// }
+
+
+
+
+// function App(){
+//   const [resourceType,setResourceType] = useState('posts')
+
+//   console.log("component render")
+
+
+//   useEffect(()=>{
+//     console.log('resource type changed ')
+//   },[resourceType])
+
+//   return(
+//     <>
+//     <button onClick={()=>setResourceType('posts')}> posts</button>
+//     <button onClick={()=>setResourceType('users')}> users</button>
+//     <button onClick={()=>setResourceType('comments')}> comments</button>
+
+//     <h1>{resourceType}</h1>
+//     </>
+//   )
+// }
 
 
 
@@ -536,6 +829,17 @@ function App() {
 
 
 
+
+
+
+
+function App(){
+  return(
+    <div>
+      <UseReducerexample/>
+    </div>
+  )
+}
 
 
 
